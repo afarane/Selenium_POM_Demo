@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="demoblazeSuite">
+	<test name="qaTest">
+		<classes>
+			<class name="com.demoblaze.qa.tests.Test_Login1" />
+			<class name="com.demoblaze.qa.tests.Test_Login2" />
+			<class name="com.demoblaze.qa.tests.Test_Login3" />
+			<!--  ok -->
+		</classes>
+	</test> 
+</suite>
