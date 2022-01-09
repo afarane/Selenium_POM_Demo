@@ -1,5 +1,6 @@
 package com.amazon.qa.tests;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,8 @@ public class LoginTest extends TestBase {
 	SignInPage signinPage;
 	TestUtil testUtil;
 	SignInUser signInUser;
+	
+	Logger log = Logger.getLogger(LoginTest.class);
 
 	public LoginTest() {
 		super();
@@ -23,6 +26,7 @@ public class LoginTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
+		log.info(" ************ Starting tets ************ ");
 		initialization();
 		testUtil = new TestUtil();
 		homePage = new HomePage();
@@ -31,6 +35,7 @@ public class LoginTest extends TestBase {
 
 	@Test(priority = 1)
 	public void homePageTitle() {
+		log.info("[afarane] Checking Home Page Title");
 		String homePagetitle = homePage.validateHomePageTitle();
 		System.out.println("Home Page Title is : " + homePagetitle);
 		Assert.assertEquals(homePagetitle,
@@ -50,6 +55,7 @@ public class LoginTest extends TestBase {
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
+		log.info(" ************ Test END ************ ");
 	}
 
 }
