@@ -1,4 +1,4 @@
-package com.amazon.qa.base;
+package TestSetup;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -20,10 +20,12 @@ public class TestBase {
 
 	public TestBase() {
 
+		System.out.println("Some issue with WebDriverWait");
+		// this.wait = new WebDriverWait(driver, 15);
+
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(
-					"src/main/java/com/amazon/qa/config/config.properties");
+			FileInputStream ip = new FileInputStream("src/main/java/com/amazon/qa/config/config.properties");
 			prop.load(ip);
 
 		} catch (Exception e) {
@@ -40,18 +42,17 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
-		
+
 		e_Driver = new EventFiringWebDriver(driver);
 		eventListener = new WebEventListener();
 		e_Driver.register(eventListener);
 		driver = e_Driver;
-		
-		
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+
 		driver.get(prop.getProperty("url"));
 	}
 

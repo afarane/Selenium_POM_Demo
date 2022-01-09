@@ -4,10 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.amazon.qa.base.TestBase;
-import com.amazon.qa.util.TestUtil;
+import TestSetup.PageBase;
 
-public class SignInPage extends TestBase {
+public class SignInPage extends PageBase {
 
 	@FindBy(xpath = "//form[@name='signIn']")
 	WebElement signInForm;
@@ -33,8 +32,8 @@ public class SignInPage extends TestBase {
 	}
 
 	// Actions:
-	public String validateSigninPageTitle() {
-		return driver.getTitle();
+	public String getSigninPageTitle() {
+		return getPageTitle();
 	}
 
 	public SignInUser signin(String email, String password) {
@@ -46,5 +45,7 @@ public class SignInPage extends TestBase {
 
 		return new SignInUser();
 	}
+
+
 
 }

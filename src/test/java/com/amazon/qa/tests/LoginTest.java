@@ -6,11 +6,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.amazon.qa.base.TestBase;
 import com.amazon.qa.pages.HomePage;
 import com.amazon.qa.pages.SignInPage;
 import com.amazon.qa.pages.SignInUser;
 import com.amazon.qa.util.TestUtil;
+
+import TestSetup.TestBase;
 
 public class LoginTest extends TestBase {
 	HomePage homePage;
@@ -46,7 +47,7 @@ public class LoginTest extends TestBase {
 	@Test(priority = 2)
 	public void loginTest() {
 		signinPage = homePage.login();
-		String signinPageTitle = signinPage.validateSigninPageTitle();
+		String signinPageTitle = signinPage.getSigninPageTitle();
 		Assert.assertEquals(signinPageTitle, "Amazon Sign In", "[error] Sign In Page Title is not correct");
 		signInUser = signinPage.signin(prop.getProperty("email"), prop.getProperty("password"));
 		signInUser.validateSignInUser(prop.getProperty("username"));

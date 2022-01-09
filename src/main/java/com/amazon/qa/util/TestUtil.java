@@ -8,7 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
-import com.amazon.qa.base.TestBase;
+import TestSetup.TestBase;
 
 public class TestUtil extends TestBase{
 	
@@ -34,5 +34,6 @@ public class TestUtil extends TestBase{
 		
 		
 	}
+
 
 }

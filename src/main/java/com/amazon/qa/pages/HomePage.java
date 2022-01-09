@@ -6,9 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.amazon.qa.base.TestBase;
+import TestSetup.PageBase;
 
-public class HomePage extends TestBase {
+public class HomePage extends PageBase {
 
 	// PageFatory - Object Repository.
 
@@ -25,7 +25,7 @@ public class HomePage extends TestBase {
 	}
 
 	public String validateHomePageTitle() {
-		return driver.getTitle();
+		return getPageTitle();
 	}
 
 	public SignInPage login() {
@@ -34,5 +34,7 @@ public class HomePage extends TestBase {
 		signinBtn.click();
 		return new SignInPage();
 	}
+
+	
 
 }
