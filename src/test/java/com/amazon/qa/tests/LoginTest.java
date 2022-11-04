@@ -49,14 +49,16 @@ public class LoginTest extends TestBase {
 		signinPage = homePage.login();
 		String signinPageTitle = signinPage.getSigninPageTitle();
 		Assert.assertEquals(signinPageTitle, "Amazon Sign In", "[error] Sign In Page Title is not correct");
-		signInUser = signinPage.signin(prop.getProperty("email"), prop.getProperty("password"));
-		signInUser.validateSignInUser(prop.getProperty("username"));
+//		signInUser = signinPage.signin(prop.getProperty("email"), prop.getProperty("password"));
+//		signInUser.validateSignInUser(prop.getProperty("username"));
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 		log.info(" ************ Test END ************ ");
+		
+		
 	}
 
 }

@@ -12,7 +12,7 @@ import TestSetup.TestBase;
 
 public class TestUtil extends TestBase{
 	
-	public static long PAGE_LOAD_TIMEOUT = 20;
+	public static long PAGE_LOAD_TIMEOUT = 30;
 	public static long IMPLICIT_WAIT = 10;
 	
 	
@@ -31,6 +31,8 @@ public class TestUtil extends TestBase{
 		String destDirFile = currentDir + "/screenshots/" + System.currentTimeMillis()+ ".png";		
 		FileUtils.copyFile(srcFile, new File(destDirFile));
 		System.out.println(destDirFile);
+		
+		
 		
 		
 	}
