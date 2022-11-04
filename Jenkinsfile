@@ -8,7 +8,7 @@ pipeline {
         stage('Hello') {
             steps {
                 git 'https://github.com/afarane/Amazon_Selenium_Demo.git'
-                sh 'mvn package
+                sh 'mvn package'
             }
         }
     }
