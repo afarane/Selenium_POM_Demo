@@ -8,12 +8,12 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/afarane/Amazon_Selenium_Demo.git'
-                sh 'mvn clean install'
+                sh 'mvn clean compile'
             }
         }
         stage('Test') {
         	steps{
-        		sh 'mvn Test'
+        		sh 'mvn test'
         	}
         	post{
         		always{
@@ -22,5 +22,16 @@ pipeline {
         		}
         	}
         }
+        stage('Publish') {
+        	steps{
+        		sh 'mvn package'
+        	}
+        	post{
+        		success{
+        			archiveArtifacts 'target/*.jar'
+        		}
+        	}
+        }
+        
     }
 }
