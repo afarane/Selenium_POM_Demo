@@ -17,7 +17,8 @@ pipeline {
         	}
         	post{
         		always{
-        			junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'
+        			// junit skipPublishingChecks: true, testResults: '**/target/surefire-reports/TEST-*.xml'
+        			testNG(reportFilenamePattern: '**/testng-many-results.xml')
         		}
         	}
         }
