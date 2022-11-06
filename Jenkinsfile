@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/afarane/Amazon_Selenium_Demo.git'
-                sh 'mvn clean compile'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
