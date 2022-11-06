@@ -44,7 +44,7 @@ public class LoginTest extends TestBase {
 				"[error] Home Page Title is not correct");
 	}
 
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void loginTest() {
 		signinPage = homePage.login();
 		String signinPageTitle = signinPage.getSigninPageTitle();
